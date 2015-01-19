@@ -26,3 +26,9 @@ mkdir -p $LIBRARIES_MODULES/$NAME
 cp modules/$VERSION $LIBRARIES_MODULES/$NAME
 ls -lht /apprepo
 ls -lht /apprepo/*
+
+echo "Checking gsl program"
+module add gsl
+cd $WORKSPACE
+g++ hello-world.cpp
+./a.out
