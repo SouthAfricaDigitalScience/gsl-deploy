@@ -35,5 +35,5 @@ module list
 echo $CPATH
 ls -lht $CPATH/gsl
 cd $WORKSPACE
-g++ hello-world.cpp
+g++ -L$GSL_DIR/lib -lgsl -lgslcblas hello-world.cpp
 ./a.out
