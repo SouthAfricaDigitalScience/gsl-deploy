@@ -21,6 +21,7 @@ module-whatis "$NAME $VERSION."
 setenv GSL_VERSION $VERSION
 setenv GSL_DIR /apprepo/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
 prepend-path LD_LIBRARY_PATH $::env(GSL_DIR)/lib
+prepend-path CPATH $::env(GSL_DIR)/include
 MODULE_FILE
 ) > modules/$VERSION
 mkdir -p $LIBRARIES_MODULES/$NAME
@@ -30,6 +31,8 @@ ls -lht /apprepo/*
 
 echo "Checking gsl program"
 module add gsl
+module list
+echo $CPATH
 cd $WORKSPACE
 g++ hello-world.cpp
 ./a.out
