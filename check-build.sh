@@ -21,7 +21,7 @@ module-whatis "$NAME $VERSION."
 setenv GSL_VERSION $VERSION
 setenv GSL_DIR /apprepo/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
 prepend-path LD_LIBRARY_PATH $::env(GSL_DIR)/lib
-prepend-path CPATH $::env(GSL_DIR)/include
+prepend-path CPATH $::env(GSL_DIR)/include/
 MODULE_FILE
 ) > modules/$VERSION
 mkdir -p $LIBRARIES_MODULES/$NAME
