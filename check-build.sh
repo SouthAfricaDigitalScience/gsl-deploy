@@ -33,6 +33,7 @@ echo "Checking gsl program"
 module add gsl
 module list
 echo $CPATH
+ls -lht $CPATH/gsl
 cd $WORKSPACE
 g++ hello-world.cpp
 ./a.out
