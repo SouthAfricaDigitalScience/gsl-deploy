@@ -1,5 +1,6 @@
 #!/bin/bash
 module load ci
+cd $NAME-$VERSION
 make check
 make install
 make install DESTDIR=$WORKSPACE/build
