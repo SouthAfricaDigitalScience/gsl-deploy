@@ -4,7 +4,7 @@ echo $SRC_DIR
 module load ci
 # SRC_DIR=/repo/src/$NAME
 #module load gcc/4.8.2
-echo "getting the file from gnu.org"
+echo "getting the file from gnu.org mirror"
 if [[ ! -s $SRC_DIR/$SOURCE_FILE ]] ; then
   mkdir -vp $SRC_DIR
 #wget --verbose ftp://ftp.is.co.za/mirror/ftp.gnu.org/gnu/gsl/$SOURCE_FILE -O $SRC_DIR/$SOURCE_FILE
