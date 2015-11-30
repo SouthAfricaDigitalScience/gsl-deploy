@@ -1,12 +1,12 @@
-#!/bin/bash
+#!/bin/bash -e
+. /etc/profile.d/modules.sh
 module load ci
-cd $NAME-$VERSION
+cd ${NAME}-${VERSION}
 make check
 make install
-make install DESTDIR=$WORKSPACE/build
-mkdir -p $REPO_DIR
-rm -rf $REPO_DIR/*
-tar -cvzf $REPO_DIR/build.tar.gz -C $WORKSPACE/build apprepo
+make install DESTDIR=${WORKSPACE}/build
+mkdir -p ${REPO_DIR}
+rm -rf ${REPO_DIR}/*
 mkdir -p modules
 (
 cat <<MODULE_FILE
@@ -23,20 +23,19 @@ setenv GSL_DIR /apprepo/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
 prepend-path LD_LIBRARY_PATH $::env(GSL_DIR)/lib
 prepend-path CPATH $::env(GSL_DIR)/include/
 MODULE_FILE
-) > modules/$VERSION
-mkdir -p $LIBRARIES_MODULES/$NAME
-cp modules/$VERSION $LIBRARIES_MODULES/$NAME
-ls -lht /apprepo
-ls -lht /apprepo/*
+) > modules/${VERSION}
+mkdir -p ${LIBRARIES_MODULES}/${NAME}
+cp modules/${VERSION} ${LIBRARIES_MODULES}/${NAME}
+
 
 echo "Checking gsl program"
 module add gsl
 module list
-echo $CPATH
-ls -lht $CPATH/gsl
-cd $WORKSPACE
+echo ${CPATH}
+ls -lht ${CPATH}/gsl
+cd ${WORKSPACE}
 echo "compiling"
-g++ -c -L$GSL_DIR/lib -lgsl -lgslcblas -lm hello-world.cpp
+g++ -c -L${GSL_DIR}/lib -lgsl -lgslcblas -lm hello-world.cpp
 echo "linking"
 g++ hello-world.o -L$GSL_DIR/lib -lgsl -lgslcblas
 echo "executing"
