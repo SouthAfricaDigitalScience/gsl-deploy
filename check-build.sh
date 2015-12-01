@@ -4,9 +4,6 @@ module load ci
 cd ${NAME}-${VERSION}
 make check
 make install
-make install DESTDIR=${WORKSPACE}/build
-mkdir -p ${REPO_DIR}
-rm -rf ${REPO_DIR}/*
 mkdir -p modules
 (
 cat <<MODULE_FILE
@@ -26,7 +23,6 @@ MODULE_FILE
 ) > modules/${VERSION}
 mkdir -p ${LIBRARIES_MODULES}/${NAME}
 cp modules/${VERSION} ${LIBRARIES_MODULES}/${NAME}
-
 
 echo "Checking gsl program"
 module add gsl
