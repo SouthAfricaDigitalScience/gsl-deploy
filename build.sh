@@ -19,7 +19,7 @@ elif [ -e ${SRC_DIR}/${SOURCE_FILE}.lock ] ; then
   done
 fi
 ls -lht ${SRC_DIR}/${SOURCE_FILE}
-tar xfz ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE}
+tar xfz ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE} --skip-old-files
 cd ${WORKSPACE}/${NAME}-${VERSION}
 ./configure --prefix ${SOFT_DIR}
 make
