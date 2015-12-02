@@ -22,7 +22,7 @@ proc ModulesHelp { } {
 
 module-whatis   "$NAME $VERSION : See https://github.com/SouthAfricaDigitalScience/gsl-deploy"
 setenv GSL_VERSION $VERSION
-setenv GSL_DIR     $::env(CVMFS_DIR)$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
+setenv GSL_DIR     $::env(CVMFS_DIR)/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
 prepend-path LD_LIBRARY_PATH $::env(GSL_DIR)/lib
 prepend-path CPATH $::env(GSL_DIR)/include/
 MODULE_FILE
