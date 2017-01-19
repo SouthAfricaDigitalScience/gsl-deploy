@@ -21,5 +21,7 @@ fi
 ls -lht ${SRC_DIR}/${SOURCE_FILE}
 tar xfz ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE} --skip-old-files
 cd ${WORKSPACE}/${NAME}-${VERSION}
-./configure --prefix ${SOFT_DIR}
+./configure --prefix ${SOFT_DIR} \
+--enable-shared \
+--enable-static
 make

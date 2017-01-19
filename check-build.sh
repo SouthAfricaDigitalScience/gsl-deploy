@@ -1,6 +1,6 @@
 #!/bin/bash -e
 . /etc/profile.d/modules.sh
-module load ci
+module add ci
 cd ${NAME}-${VERSION}
 make check
 make install
@@ -16,7 +16,7 @@ puts stderr " that the [module-info name] module is not available"
 }
 module-whatis "$NAME $VERSION."
 setenv GSL_VERSION $VERSION
-setenv GSL_DIR /apprepo/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
+setenv GSL_DIR /data/ci-build/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
 prepend-path LD_LIBRARY_PATH $::env(GSL_DIR)/lib
 prepend-path CPATH $::env(GSL_DIR)/include/
 prepend-path PATH  $::env(GSL_DIR)/bin
