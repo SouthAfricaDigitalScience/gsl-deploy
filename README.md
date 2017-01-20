@@ -31,3 +31,7 @@ The  builds are configured with :
 
 
 #  Citing
+
+Cite as
+
+Bruce Becker. (2017). SouthAfricaDigitalScience/gsl-deploy: CODE-RADE Foundation Release 3 : GSL [Data set]. Zenodo. http://doi.org/10.5281/zenodo.254292 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.254292.svg)](https://doi.org/10.5281/zenodo.254292)
