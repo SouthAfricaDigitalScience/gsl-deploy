@@ -30,3 +30,16 @@ prepend-path CPATH $::env(GSL_DIR)/include/
 prepend-path PATH  $::env(GSL_DIR)/bin
 MODULE_FILE
 ) > ${LIBRARIES_MODULES}/${NAME}/${VERSION}
+
+echo "Checking gsl program"
+module add gsl/${VERSION}
+module list
+echo ${CPATH}
+ls -lht ${CPATH}/gsl
+cd ${WORKSPACE}
+echo "compiling"
+g++ -c -L${GSL_DIR}/lib -lgsl -lgslcblas -lm hello-world.cpp
+echo "linking"
+g++ hello-world.o -L$GSL_DIR/lib -lgsl -lgslcblas
+echo "executing"
+./a.out
