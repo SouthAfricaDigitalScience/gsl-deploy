@@ -26,7 +26,7 @@ mkdir -p ${LIBRARIES_MODULES}/${NAME}
 cp modules/${VERSION} ${LIBRARIES_MODULES}/${NAME}
 
 echo "Checking gsl program"
-module add gsl
+module add gsl/${VERSION}
 module list
 echo ${CPATH}
 ls -lht ${CPATH}/gsl
