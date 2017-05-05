@@ -1,4 +1,18 @@
 #!/bin/bash -e
+# Copyright 2016 C.S.I.R. Meraka Institute
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 # this should be run after check-build finishes.
 . /etc/profile.d/modules.sh
 echo ${SOFT_DIR}
@@ -10,8 +24,8 @@ echo "All tests have passed, will now build into ${SOFT_DIR}"
  --enable-shared \
  --enable-static
 make install
-echo "Creating the modules file directory ${LIBRARIES_MODULES}"
-mkdir -p ${LIBRARIES_MODULES}/${NAME}
+echo "Creating the modules file directory ${LIBRARIES}"
+mkdir -p ${LIBRARIES}/${NAME}
 (
 cat <<MODULE_FILE
 #%Module1.0
@@ -29,7 +43,7 @@ prepend-path LD_LIBRARY_PATH $::env(GSL_DIR)/lib
 prepend-path CPATH $::env(GSL_DIR)/include/
 prepend-path PATH  $::env(GSL_DIR)/bin
 MODULE_FILE
-) > ${LIBRARIES_MODULES}/${NAME}/${VERSION}
+) > ${LIBRARIES}/${NAME}/${VERSION}
 
 echo "Checking gsl program"
 module add gsl/${VERSION}

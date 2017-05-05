@@ -1,4 +1,4 @@
-[![Build Status](https://ci.sagrid.ac.za/buildStatus/icon?job=gsl-deploy)](https://ci.sagrid.ac.za/job/gsl-deploy/)
+[![Build Status](https://ci.sagrid.ac.za/buildStatus/icon?job=gsl-deploy)](https://ci.sagrid.ac.za/job/gsl-deploy/) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.254292.svg)](https://doi.org/10.5281/zenodo.254292)
 
 # gsl-deploy
 
