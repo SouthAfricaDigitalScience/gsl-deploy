@@ -22,7 +22,7 @@ echo "getting the file from gnu.org mirror"
 if [ ! -e ${SRC_DIR}/${SOURCE_FILE}.lock ] && [ ! -s ${SRC_DIR}/${SOURCE_FILE} ] ; then
 # claim the download
   touch  ${SRC_DIR}/${SOURCE_FILE}.lock
-  wget http://mirror.ufs.ac.za/gnu/gnu/${NAME}/${NAME}-${VERSION}.tar.gz -O ${SRC_DIR}/${SOURCE_FILE}
+  wget http://mirror.ufs.ac.za/gnu/${NAME}/${NAME}-${VERSION}.tar.gz -O ${SRC_DIR}/${SOURCE_FILE}
   echo "releasing lock"
   rm -v ${SRC_DIR}/${SOURCE_FILE}.lock
 elif [ -e ${SRC_DIR}/${SOURCE_FILE}.lock ] ; then

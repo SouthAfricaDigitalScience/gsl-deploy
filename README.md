@@ -1,24 +1,22 @@
-[![Build Status](https://ci.sagrid.ac.za/buildStatus/icon?job=gsl-deploy)](https://ci.sagrid.ac.za/job/gsl-deploy/) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.254292.svg)](https://doi.org/10.5281/zenodo.254292)
-
 # gsl-deploy
+
+[![Build Status](https://ci.sagrid.ac.za/buildStatus/icon?job=gsl-deploy)](https://ci.sagrid.ac.za/job/gsl-deploy/) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.254292.svg)](https://doi.org/10.5281/zenodo.254292)
 
 Build, test and deploy scripts necessary to deploy [GNU Science Libraries](https://www.gnu.org/software/gsl/), for CODE-RADE
 
-# Dependencies
+## Dependencies
 
 This project does not have any dependencies.
 
 
-# Versions
+## Versions
 
 We build the following versions for Foundation Release 3:
 
   * 1.16
-  * 2.0
-  * 2.1
-  * 2.3
+  * 2.5
 
-# Configuration
+## Configuration
 
 The  builds are configured with :
 
@@ -30,7 +28,7 @@ The  builds are configured with :
 ```
 
 
-#  Citing
+##  Citing
 
 Cite as
 
