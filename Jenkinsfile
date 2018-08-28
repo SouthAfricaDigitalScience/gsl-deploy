@@ -8,10 +8,10 @@ pipeline {
   stages {
     stage('Build') {
       parallel {
-        stage('Build') {
+        stage('Build centos6') {
           agent {
-            node {
-              label 'sl6'
+            docker {
+              image 'quay.io/aaroc/code-rade-centos6'
             }
 
           }
@@ -19,10 +19,10 @@ pipeline {
             sh 'build.sh'
           }
         }
-        stage('build') {
+        stage('Build centos7') {
           agent {
-            node {
-              label 'sl7'
+            docker {
+              image 'quay.io/aaroc/code-rade-centos7'
             }
 
           }
