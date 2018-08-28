@@ -19,7 +19,7 @@ pipeline {
             sh 'build.sh'
           }
         }
-        stage('') {
+        stage('build') {
           agent {
             node {
               label 'sl7'
