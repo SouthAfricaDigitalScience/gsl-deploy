@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    node {
-      label 'sl6 x86_64'
-    }
-
-  }
+  agent any
   stages {
     stage('Build') {
       parallel {
